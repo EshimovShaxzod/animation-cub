@@ -1,0 +1,176 @@
+body{
+    background-color: rgb(169, 165, 165);
+     perspective: 1500px; 
+     height: 100vh;
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+.container{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate(-50%, -50%) rotateX(-20deg) rotateY(-45deg);
+    transition: 1s;
+}
+@keyframes cube {
+
+        0% {
+          background-color: #2bbc63;
+          height:0px;
+        }
+        100% {
+          background-color: #2bbc63;
+          height: 150px;
+        }
+      }
+.front{
+    transform: translate3d(0,0,75px);
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    text-align: center;
+    font-size: 25px;
+    background-color: rgba(136, 138, 147, 0.467);
+    border-right: 1px solid rgba(136, 138, 147, 0.367);
+}
+.front::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    animation-name: cube;
+    animation-duration: 3s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+  }
+.right{
+    transform: translate3d(75px,0,0) rotateY(90deg);
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    text-align: center;
+    font-size: 25px;
+    background-color: rgba(136, 138, 147, 0.467);
+}
+.right::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    animation-name: cube;
+    animation-duration: 3s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+  }
+.left{
+    transform: translate3d(-75px,0,0) rotateY(-90deg);
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    text-align: center;
+    font-size: 25px;
+    background-color: rgba(136, 138, 147, 0.467);
+}
+.left::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    animation-name: cube;
+    animation-duration: 3s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+  }
+.back{
+    transform: translate3d(0,0,-75px);
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    text-align: center;
+    font-size: 25px;
+    background-color: rgba(136, 138, 147, 0.467);
+}
+.back::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    animation-name: cube;
+    animation-duration: 3s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+  }
+.top{
+    transform: translate3d(0, -75px, 0) rotateX(-90deg);
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    text-align: center;
+    font-size: 25px;
+    background-color: rgba(136, 138, 147, 0.467);
+    border: 1px solid rgba(136, 138, 147, 0.367);
+}
+.bottom{
+    animation-name: white;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    transform: translate3d(0, 75px, 0) rotateX(-90deg);
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    text-align: center;
+    font-size: 25px;
+    background-color: rgba(136, 138, 147, 0.467);
+    box-shadow: 3px -3px 17px 0px black;
+   background-color: #2bbc63;
+}
+
+.container:hover{
+    transform: translate(-50%, -50%) rotateX(-20deg) rotateY(-45deg);
+    top: 46%;
+}
+.container:hover .bottom{
+    box-shadow: 3px -3px 29px 8px rgb(57, 56, 56);
+    transition: 1s;
+}
+@keyframes white {
+    0%{
+       color: chartreuse;
+    }
+    50%{
+        color: chartreuse;
+    }
+}
